@@ -4,8 +4,15 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "jest --watchAll --no-cache",
 		"start": "ts-node-dev --poll src/index.ts"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node",
+		"setupFilesAfterEnv": [
+			"./src/test/setup.ts"
+		]
 	},
 	"keywords": [],
 	"author": "",
